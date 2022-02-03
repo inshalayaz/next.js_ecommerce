@@ -13,6 +13,7 @@ const useStyles = makeStyles({
   },
   footer: {
     textAlign: 'center',
+    marginTop: 30,
   },
   grow: {
     flexGrow: 1,
@@ -23,6 +24,10 @@ const useStyles = makeStyles({
   brand: {
     fontWeight: 'bold',
     fontSize: '1.5rem',
+  },
+  section: {
+    marginTop: 10,
+    marginBottom: 10,
   },
 });
 
