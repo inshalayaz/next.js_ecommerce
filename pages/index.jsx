@@ -8,6 +8,7 @@ import {
   Typography,
   Button,
 } from '@mui/material';
+import NextLink from 'next/link';
 import React from 'react';
 import Layout from '../components/Layout';
 import data from '../utils/data';
@@ -20,16 +21,18 @@ const Home = () => {
           {data.products.map((product) => (
             <Grid item md={4} xs={12} key={product.name}>
               <Card>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={product.image}
-                    title={product.name}
-                  ></CardMedia>
-                  <CardContent>
-                    <Typography>{product.name}</Typography>
-                  </CardContent>
-                </CardActionArea>
+                <NextLink href={`/products/${product.slug}`} passHref>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      image={product.image}
+                      title={product.name}
+                    ></CardMedia>
+                    <CardContent>
+                      <Typography>{product.name}</Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </NextLink>
                 <CardActions>
                   <Typography fontWeight="600">${product.price}</Typography>
                   <Button size="small" color="primary">
